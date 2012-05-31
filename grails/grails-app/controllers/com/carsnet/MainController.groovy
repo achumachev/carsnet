@@ -2,19 +2,19 @@ package com.carsnet
 
 class MainController {
 
-    def index() {
-        render view: '/index'
-    }
+  def index() {
+    render view: '/index'
+  }
 
-    def status() {
-        render view: '/status'
-    }
+  def status() {
+    render view: '/status'
+  }
 
-    def error() {
-        render view: '/error'
-    }
+  def error() {
+    render view: '/error'
+  }
 
-    def nopage() {
-        render view: '/nopage'
-    }
+  def nopage() {
+    render view: '/nopage'
+  }
 }

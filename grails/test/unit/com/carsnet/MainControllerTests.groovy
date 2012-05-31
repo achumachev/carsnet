@@ -1,17 +1,27 @@
 package com.carsnet
 
-
-
 import grails.test.mixin.*
-import org.junit.*
 
-/**
- * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
- */
 @TestFor(MainController)
 class MainControllerTests {
 
-    void testSomething() {
-       fail "Implement me"
-    }
+  void testIndex() {
+    controller.index()
+    assert view, '/index'
+  }
+
+  void testStatus() {
+    controller.status()
+    assert view, '/status'
+  }
+
+  void testNopage() {
+    controller.nopage()
+    assert view, '/nopage'
+  }
+
+  void testError() {
+    controller.error()
+    assert view, '/error'
+  }
 }

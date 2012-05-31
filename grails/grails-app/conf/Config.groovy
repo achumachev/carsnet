@@ -12,7 +12,7 @@
 
 grails.app.context = '/'
 
-grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
+//grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
 grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
@@ -32,15 +32,12 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
 
-
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64
 grails.views.gsp.encoding = "UTF-8"
 grails.converters.encoding = "UTF-8"
 // enable Sitemesh preprocessing of GSP pages
 grails.views.gsp.sitemesh.preprocess = true
-// scaffolding templates configuration
-grails.scaffolding.templates.domainSuffix = 'Instance'
 
 // Set to false to use the new Grails 1.2 JSONBuilder in the render method
 grails.json.legacy.builder = false
@@ -49,14 +46,14 @@ grails.enable.native2ascii = true
 // packages to include in Spring bean scanning
 grails.spring.bean.packages = []
 // whether to disable processing of multi part requests
-grails.web.disable.multipart=false
+grails.web.disable.multipart = false
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
 
 // set per-environment serverURL stem for creating absolute links
 environments {
     development {
-        grails.logging.jul.usebridge = true
+        grails.logging.jul.usebridge = false
     }
     production {
         grails.logging.jul.usebridge = false
@@ -66,26 +63,30 @@ environments {
 
 // log4j configuration
 log4j = {
-    appenders {
-        console name:'stdout', layout:pattern(conversionPattern: '%d %-4r [%t] %-5p %c %x - %m%n')
-    }
+  appenders {
+    console name:'stdout', layout:pattern(conversionPattern: '%d [%t] %-5p %c{3} %x - %m%n')
+  }
 
-    root {
-        indo 'stdout'
-        additivity = false
-    }
+  error 'org.codehaus.groovy.grails',
+        'org.grails.plugin',
+        'org.apache.coyote',
+        'org.apache.tomcat',
+        'org.apache.catalina',
+        'org.springframework',
+        'org.hibernate',
+        'net.sf.ehcache.hibernate',
+        'grails.app'
 
-    error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
-           'org.codehaus.groovy.grails.web.pages', //  GSP
-           'org.codehaus.groovy.grails.web.sitemesh', //  layouts
-           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-           'org.codehaus.groovy.grails.web.mapping', // URL mapping
-           'org.codehaus.groovy.grails.commons', // core / classloading
-           'org.codehaus.groovy.grails.plugins', // plugins
-           'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
+  debug 'com.carsnet',
+        'grails.app.controllers.com.carsnet',
+        'grails.app.domain.com.carsnet',
+        'grails.app.services.com.carsnet',
+        'grails.app.taglib.com.carsnet',
+        'grails.app.conf.com.carsnet',
+        'grails.app.filters.com.carsnet'
 
-    debug  'com.carsnet'
+  root {
+    debug 'stdout'
+    additivity = false
+  }
 }
