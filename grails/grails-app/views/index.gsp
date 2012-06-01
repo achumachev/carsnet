@@ -10,10 +10,14 @@
 	</head>
 	<body>
 		<h1>Welcome to CarsNet.com</h1>
-    <div>
+    <p>
       <g:link controller="auth" action="loginForm">Login</g:link> or
       <g:link controller="auth" action="registerForm">Register</g:link>
-    </div>
+    </p>
+    <br />
+    <br />
+
+    <h3 style="text-align: center">Start building your car from most popular brands</h3>
 
     <div class="carousel">
       <a class="prev">&laquo; Previous</a>
@@ -22,7 +26,9 @@
         <div class="items">
           <g:each in="${CarsContainer.FEATURED}" var="car">
             <div class="item">
-              <g:link controller="garage" action="carForm" params="[mark: car]">${car}</g:link>
+              <g:link controller="garage" action="carForm" params="[mark: car]">
+                <img src="/images/cars/${car}.jpg" alt="${car}" />
+              </g:link>
             </div>
           </g:each>
         </div>

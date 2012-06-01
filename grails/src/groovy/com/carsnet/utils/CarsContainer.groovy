@@ -4,13 +4,11 @@ class CarsContainer {
   static final def FEATURED = [
       'audi',
       'bmw',
+      'ford',
       'honda',
-      'hyundai',
       'mazda',
       'mercedes',
-      'mitsubishi',
-      'opel',
-      'skoda',
+      'nissan',
       'toyota'
   ]
 

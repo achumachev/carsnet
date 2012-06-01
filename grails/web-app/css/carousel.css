@@ -53,11 +53,10 @@
 }
 
 .carousel .item {
-    width: 200px;
+    width: 202px;
     text-align: center;
-    height: 60px;
-    border: 1px solid #97D0E8;
-    padding: 40px 0 0 0;
+    height: 90px;
+    padding-top: 10px;
     float: left;
     background-color: transparent;
 }
