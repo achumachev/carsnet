@@ -1,0 +1,63 @@
+.carousel {
+    background-color: transparent;
+    overflow: hidden;
+    clear: both;
+    width: 260px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.carousel .wrapper {
+    overflow: hidden;
+    float: left;
+    width: 202px;
+    position: relative;
+    margin: 0 8px;
+}
+
+.carousel .prev, .carousel .next {
+    display: block;
+    width: 21px;
+    height: 38px;
+    float: left;
+    background-color: transparent;
+    background-image: url(../images/navi.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-indent: -9999px;
+    margin: 30px 0;
+}
+
+.carousel .prev {
+    background-position: 0 0;
+}
+
+.carousel .prev:focus, .carousel .prev:active {
+    background-position: 0 -58px;
+}
+
+.carousel .next {
+    background-position: -41px 0;
+}
+
+.carousel .next:focus, .carousel .next:active {
+    background-position: -41px -58px;
+}
+
+
+.carousel .items {
+    clear: both;
+    overflow: hidden;
+    width: 20000em;
+    position: absolute;
+}
+
+.carousel .item {
+    width: 200px;
+    text-align: center;
+    height: 60px;
+    border: 1px solid #97D0E8;
+    padding: 40px 0 0 0;
+    float: left;
+    background-color: transparent;
+}

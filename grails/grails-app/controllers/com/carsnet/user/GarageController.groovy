@@ -7,7 +7,7 @@ class GarageController {
   }
 
   def carForm() {
-    render(view: '/garage/carForm')
+    render(view: '/garage/carForm', model: [selectedMark: params.mark])
   }
 
   def saveCar() {

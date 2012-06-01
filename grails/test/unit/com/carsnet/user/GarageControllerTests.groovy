@@ -11,10 +11,19 @@ class GarageControllerTests {
     assert view, '/garage/garage'
   }
 
-  void testCarForm() {
+  void testCarFormWithValue() {
+    params.mark = 'toyota'
     controller.carForm()
 
     assert view, '/garage/carForm'
+    assert model['selectedMark'], 'toyota'
+  }
+
+  void testCarFormEmpty() {
+    controller.carForm()
+
+    assert view, '/garage/carForm'
+    assert model['selectedMark'] == null
   }
 
   void testShowCar() {
