@@ -1,17 +1,31 @@
 package com.carsnet.user
 
-
-
 import grails.test.mixin.*
-import org.junit.*
 
-/**
- * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
- */
 @TestFor(GarageController)
 class GarageControllerTests {
 
-    void testSomething() {
-       fail "Implement me"
-    }
+  void testGarage() {
+    controller.index()
+
+    assert view, '/garage/garage'
+  }
+
+  void testCarForm() {
+    controller.carForm()
+
+    assert view, '/garage/carForm'
+  }
+
+  void testShowCar() {
+    controller.showCar()
+
+    assert view, '/garage/carOverview'
+  }
+
+  void testSaveCar() {
+    controller.saveCar()
+
+    assert response.redirectedUrl, '/garage/showCar/1'
+  }
 }
