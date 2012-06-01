@@ -6,3 +6,4 @@
 **/*.iws
 **/target
 **/stacktrace.log
+**/out
