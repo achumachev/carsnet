@@ -16,7 +16,7 @@ class AuthController {
     if (params.email == 'test@host.com' && params.password == 'password') {
       redirect(controller: 'userHome', action: 'index')
       session.user = {
-        login: params.login
+        email: params.email
         password: params.password
       }
     } else {
