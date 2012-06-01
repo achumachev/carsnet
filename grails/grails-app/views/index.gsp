@@ -44,6 +44,7 @@
           .scrollable({
             circular: true,
             mousewheel: true,
+            //vertical: true,
             speed: 600
           })
       });
