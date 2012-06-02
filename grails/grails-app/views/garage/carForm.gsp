@@ -7,7 +7,7 @@
   </head>
   <body>
     Add new car
-    <g:form controller="garage" action="saveCar">
+    <g:form controller="carCreate" action="saveCar">
       <table>
         <tr>
           <td>Mark</td>
@@ -39,7 +39,8 @@
       $(document).ready(function() {
         $('select[name="model"]').change(function() {
           jQuery.ajax({
-            url: '/garage/getModelYears',
+            type: 'POST',
+            url: '/carCreate/getModelYears',
             success: function(data, textStatus) {
               var select = $('select[name="year"]');
               select.empty();
@@ -58,7 +59,8 @@
 
         $('select[name="brand"]').change(function() {
           jQuery.ajax({
-            url: '/garage/getModels',
+            type: 'POST',
+            url: '/carCreate/getModels',
             success: function(data, textStatus) {
               var select = $('select[name="model"]');
               select.empty();

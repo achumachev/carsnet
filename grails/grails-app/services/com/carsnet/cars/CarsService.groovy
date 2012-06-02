@@ -15,10 +15,18 @@ class CarsService {
   }
 
   def getModels(brand) {
+    if (!brand) {
+      return []
+    }
+
     CarModel.findAll("FROM CarModel model WHERE model.brand.name = ?", [brand])
   }
 
   def getModelYears(brand, model) {
+    if (!brand || !model) {
+      return []
+    }
+
     CarYear.findAll("FROM CarYear year WHERE year.model.name = ? AND year.model.brand.name = ?", [model, brand])
   }
 }

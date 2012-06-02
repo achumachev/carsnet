@@ -64,7 +64,7 @@ environments {
 // log4j configuration
 log4j = {
   appenders {
-    console name:'stdout', layout:pattern(conversionPattern: '%d [%t] %-5p %c{3} %x - %m%n')
+    console name:'stdout', layout:pattern(conversionPattern: '%d %-5p %c - %m%n')
   }
 
   error 'org.codehaus.groovy.grails',
@@ -72,10 +72,13 @@ log4j = {
         'org.apache.coyote',
         'org.apache.tomcat',
         'org.apache.catalina',
+        'org.apache.jasper',
         'org.springframework',
         'org.hibernate',
-        'net.sf.ehcache.hibernate',
-        'grails.app'
+        'net.sf.ehcache',
+        'grails.app',
+        'grails.plugin',
+        'grails.spring'
 
   debug 'com.carsnet',
         'grails.app.controllers.com.carsnet',
