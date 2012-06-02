@@ -1,5 +1,7 @@
 package com.carsnet
 
+import com.carsnet.domain.car.CarBrand
+
 class MainController {
 
   def index() {
@@ -7,7 +9,7 @@ class MainController {
       redirect controller: 'userHome', action: 'index'
     }
 
-    render view: '/index'
+    render view: '/index', model: [featuredBrands: CarBrand.findAllByFeatured(true)]
   }
 
   def status() {

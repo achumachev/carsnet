@@ -1,5 +1,9 @@
 package com.carsnet.user
 
+import com.carsnet.domain.car.CarBrand
+import grails.converters.JSON
+import com.carsnet.domain.car.CarModel
+
 class GarageController {
 
   def index() {
@@ -7,7 +11,7 @@ class GarageController {
   }
 
   def carForm() {
-    render(view: '/garage/carForm', model: [selectedMark: params.mark])
+    render(view: '/garage/carForm', model: [selectedMark: params.mark, brands: CarBrand.findAll()])
   }
 
   def saveCar() {
@@ -16,5 +20,15 @@ class GarageController {
 
   def showCar() {
     render(view: '/garage/carOverview')
+  }
+
+  def getModels() {
+    def brand = CarBrand.findByName(params.brand);
+
+    render(
+        CarModel.findAllByBrand(brand).collect { it ->
+          it.name
+        }
+     as JSON)
   }
 }

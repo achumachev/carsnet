@@ -3,6 +3,7 @@
   <head>
     <meta name="layout" content="main" />
     <title>New car</title>
+    <r:require modules="jquery" />
   </head>
   <body>
     Add new car
@@ -11,8 +12,8 @@
         <tr>
           <td>Mark</td>
           <td>
-            <g:select name="mark" from="${CarsContainer.CARS}" value="${selectedMark}"
-                      noSelection="['' : '- Please select -']" />
+            <g:select name="brand" from="${brands}" value="${selectedMark}"
+                      optionKey="name" optionValue="name" noSelection="['' : '- Please select -']" />
           </td>
         </tr>
         <tr>
@@ -51,5 +52,25 @@
         </tr>
       </table>
     </g:form>
+
+    <script type="text/javascript">
+      $('select[name="brand"]').change(function() {
+        jQuery.ajax({
+          url: '/garage/getModels',
+          success: function(data, textStatus) {
+            var select = $('select[name="model"]');
+            select.empty();
+
+            jQuery.each(data, function(i, m) {
+              $('<option>' + m + '</option>').appendTo(select)
+            });
+          },
+          data: {
+            brand: $('select[name="brand"]').val()
+          }
+        })
+      });
+    </script>
+
   </body>
 </html>

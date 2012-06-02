@@ -24,10 +24,10 @@
 
       <div class="wrapper">
         <div class="items">
-          <g:each in="${CarsContainer.FEATURED}" var="car">
+          <g:each in="${featuredBrands}" var="car">
             <div class="item">
-              <g:link controller="garage" action="carForm" params="[mark: car]">
-                <img src="/images/cars/${car}.jpg" alt="${car}" />
+              <g:link controller="garage" action="carForm" params="[mark: car.name]">
+                <img src="${car.image}" alt="${car.name}" />
               </g:link>
             </div>
           </g:each>
