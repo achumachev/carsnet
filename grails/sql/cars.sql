@@ -121,3 +121,11 @@ INSERT INTO car_models (name, brand_id) VALUES ('Sorento', 41);
 INSERT INTO car_models (name, brand_id) VALUES ('Soul', 41);
 INSERT INTO car_models (name, brand_id) VALUES ('Sportage', 41);
 INSERT INTO car_models (name, brand_id) VALUES ('Venga', 41);
+
+INSERT INTO car_model_years (year, model_id) VALUES (1996, 3);
+INSERT INTO car_model_years (year, model_id) VALUES (1997, 3);
+INSERT INTO car_model_years (year, model_id) VALUES (1998, 3);
+INSERT INTO car_model_years (year, model_id) VALUES (2000, 3);
+INSERT INTO car_model_years (year, model_id) VALUES (2001, 3);
+INSERT INTO car_model_years (year, model_id) VALUES (2002, 3);
+INSERT INTO car_model_years (year, model_id) VALUES (2003, 3);

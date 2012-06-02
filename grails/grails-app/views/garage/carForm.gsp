@@ -12,40 +12,22 @@
         <tr>
           <td>Mark</td>
           <td>
-            <g:select name="brand" from="${brands}" value="${selectedMark}"
+            <g:select name="brand" from="${allBrands}" value="${selectedBrand}"
                       optionKey="name" optionValue="name" noSelection="['' : '- Please select -']" />
           </td>
         </tr>
         <tr>
           <td>Model</td>
           <td>
-            <select name="model">
-              <option value="635050783">3000 GT</option>
-              <option value="4074660625">ASX</option>
-              <option value="2694898892">Carisma</option>
-              <option value="316977277">Colt</option>
-              <option value="640241908">Eclipse</option>
-              <option value="385586272">Galant</option>
-              <option value="800831102">Grandis</option>
-              <option value="1205962102">I</option>
-              <option value="741187822">L300</option>
-              <option value="3729149170">Lancer</option>
-              <option value="261645537">Outlander</option>
-              <option value="1921441027">Pajero</option>
-              <option value="3234673613">Pajero Classic</option>
-              <option value="1706893215">Pajero Pini</option>
-              <option value="756274310">Pajero Sport</option>
-              <option value="1881843434">Sigma</option>
-              <option value="2940255858">Space Gear</option>
-              <option value="3603253482">Space Runner</option>
-              <option value="2335833218">Space Star</option>
-              <option value="2969051353">Space Wagon</option>
-            </select>
-            %{--<g:select name="model" from="${['Charisma', 'Mustang']}" noSelection="['' : '- Please select -']" />--}%
+            <g:select name="model" from="${models}" optionKey="name" optionValue="name"
+                      noSelection="['' : '- Please select -']" />
           </td>
         </tr>
         <tr>
-          <td>Year</td><td><g:select name="year" from="${['1998', '2005']}" noSelection="['' : '- Please select -']" /></td>
+          <td>Year</td>
+          <td>
+            <g:select name="year" from="${[]}" noSelection="['' : '- Please select -']" />
+          </td>
         </tr>
         <tr>
           <td></td><td><g:submitButton name="Save" /></td>
@@ -54,21 +36,43 @@
     </g:form>
 
     <script type="text/javascript">
-      $('select[name="brand"]').change(function() {
-        jQuery.ajax({
-          url: '/garage/getModels',
-          success: function(data, textStatus) {
-            var select = $('select[name="model"]');
-            select.empty();
+      $(document).ready(function() {
+        $('select[name="model"]').change(function() {
+          jQuery.ajax({
+            url: '/garage/getModelYears',
+            success: function(data, textStatus) {
+              var select = $('select[name="year"]');
+              select.empty();
 
-            jQuery.each(data, function(i, m) {
-              $('<option>' + m + '</option>').appendTo(select)
-            });
-          },
-          data: {
-            brand: $('select[name="brand"]').val()
-          }
-        })
+              $('<option value="">- Please select -</option>').appendTo(select);
+              jQuery.each(data, function(i, m) {
+                $('<option value="' + m + '">' + m + '</option>').appendTo(select)
+              });
+            },
+            data: {
+              brand: $('select[name="brand"]').val(),
+              model: $('select[name="model"]').val()
+            }
+          })
+        });
+
+        $('select[name="brand"]').change(function() {
+          jQuery.ajax({
+            url: '/garage/getModels',
+            success: function(data, textStatus) {
+              var select = $('select[name="model"]');
+              select.empty();
+
+              $('<option value="">- Please select -</option>').appendTo(select);
+              jQuery.each(data, function(i, m) {
+                $('<option value="' + m + '">' + m + '</option>').appendTo(select)
+              });
+            },
+            data: {
+              brand: $('select[name="brand"]').val()
+            }
+          })
+        });
       });
     </script>
 

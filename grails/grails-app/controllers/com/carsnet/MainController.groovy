@@ -1,15 +1,15 @@
 package com.carsnet
 
-import com.carsnet.domain.car.CarBrand
-
 class MainController {
+  def carsService
 
   def index() {
     if (session.user) {
       redirect controller: 'userHome', action: 'index'
+      return
     }
 
-    render view: '/index', model: [featuredBrands: CarBrand.findAllByFeatured(true)]
+    render view: '/index', model: [featuredBrands: carsService.getFeaturedBrands()]
   }
 
   def status() {

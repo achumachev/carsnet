@@ -26,7 +26,7 @@
         <div class="items">
           <g:each in="${featuredBrands}" var="car">
             <div class="item">
-              <g:link controller="garage" action="carForm" params="[mark: car.name]">
+              <g:link controller="garage" action="carForm" params="[brand: car.name]">
                 <img src="${car.image}" alt="${car.name}" />
               </g:link>
             </div>

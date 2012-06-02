@@ -1,6 +1,6 @@
 dataSource {
     driverClassName = "org.postgresql.Driver"
-    dbCreate = "update"
+    dbCreate = "create"
     username = "postgres"
     password = "postgres"
     url = "jdbc:postgresql://localhost/carsnet"
