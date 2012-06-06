@@ -6,34 +6,36 @@
     <r:require modules="jquery" />
   </head>
   <body>
-    Add new car
-    <g:form controller="carCreate" action="saveCar">
-      <table>
-        <tr>
-          <td>Mark</td>
-          <td>
-            <g:select name="brand" from="${allBrands}" value="${selectedBrand}"
-                      optionKey="name" optionValue="name" noSelection="['' : '- Please select -']" />
-          </td>
-        </tr>
-        <tr>
-          <td>Model</td>
-          <td>
-            <g:select name="model" from="${models}" optionKey="name" optionValue="name"
-                      noSelection="['' : '- Please select -']" />
-          </td>
-        </tr>
-        <tr>
-          <td>Year</td>
-          <td>
-            <g:select name="year" from="${[]}" noSelection="['' : '- Please select -']" />
-          </td>
-        </tr>
-        <tr>
-          <td></td><td><g:submitButton name="Save" /></td>
-        </tr>
-      </table>
-    </g:form>
+    <h1>Add new car</h1>
+    <div class="content">
+      <g:form controller="carCreate" action="saveCar">
+        <table>
+          <tr>
+            <td>Mark</td>
+            <td>
+              <g:select name="brand" from="${allBrands}" value="${selectedBrand}"
+                        optionKey="name" optionValue="name" noSelection="['' : '- Please select -']" />
+            </td>
+          </tr>
+          <tr>
+            <td>Model</td>
+            <td>
+              <g:select name="model" from="${models}" optionKey="name" optionValue="name"
+                        noSelection="['' : '- Please select -']" />
+            </td>
+          </tr>
+          <tr>
+            <td>Year</td>
+            <td>
+              <g:select name="year" from="${[]}" noSelection="['' : '- Please select -']" />
+            </td>
+          </tr>
+          <tr>
+            <td></td><td><g:submitButton name="Save" /></td>
+          </tr>
+        </table>
+      </g:form>
+    </div>
 
     <script type="text/javascript">
       $(document).ready(function() {

@@ -12,12 +12,17 @@ body {
 	background: #ffffff;
 	color: #333333;
 	margin: 0 auto;
-    width: 1000px;
+    font-size: 14px;
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
 }
 
 a {
-	color: #48802c;
+	color: #08006c;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none
 }
 
 ul {
@@ -30,43 +35,10 @@ img {
 }
 
 /* GENERAL */
-#grailsLogo {
-    background-color: #abbf78;
-}
-
-#grailsLogo a {
-	display: inline-block;
-	margin: 1em;
-}
-
-h1 {
-    color: #48802c;
-    font-weight: normal;
-    font-size: 1.25em;
-    margin: 0.8em 0 0.3em 0;
-}
-
-.content {
-}
-
-.content h1 {
-	border-bottom: 1px solid #CCCCCC;
-	margin: 0.8em 1em 0.3em;
-	padding: 0 0.25em;
-}
-
 .footer {
-	background: #abbf78;
-	color: #000;
 	clear: both;
-	font-size: 0.8em;
-	margin-top: 1.5em;
-	padding: 1em;
-	min-height: 1em;
-}
-
-.footer a {
-	color: #255b17;
+	padding: 16px;
+    text-align: center;
 }
 
 .spinner {
@@ -81,6 +53,52 @@ h1 {
 }
 
 /* NAVIGATION MENU */
+.body-content {
+    width: 1000px;
+    margin: 0 auto;
+    min-height: 400px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+}
+
+.header-toolbar {
+    background-color: #000000;
+    color: white;
+    padding: 6px 10px;
+    clear: both;
+}
+
+.header-toolbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: lowercase
+}
+
+.header-toolbar a:hover {
+    text-decoration: underline
+}
+
+.header-toolbar .logout {
+    color: #dc143c;
+    float: right;
+}
+
+.logo {
+    text-align: center;
+    margin: 10px;
+}
+
+.body-content h1 {
+    background-color: #d3d3d3;
+    font-size: 20px;
+    padding: 6px 12px;
+}
+
+.content {
+    margin: 10px;
+
+}
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
 label {
@@ -172,22 +190,12 @@ input:invalid, select:invalid, textarea:invalid {
 
 /* TABLES */
 table {
-	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
 	width: 100%;
-	margin-bottom: 1em;
 }
 
 tr {
 	border: 0;
-}
-
-tr>td:first-child, tr>th:first-child {
-	padding-left: 1.25em;
-}
-
-tr>td:last-child, tr>th:last-child {
-	padding-right: 1.25em;
 }
 
 td, th {
@@ -203,49 +211,7 @@ th {
 	font-weight: bold;
 	line-height: 1.7em;
 	padding: 0.2em 0.6em;
-}
-
-thead th {
 	white-space: nowrap;
-}
-
-th a {
-	display: block;
-	text-decoration: none;
-}
-
-th a:link, th a:visited {
-	color: #666666;
-}
-
-th a:hover, th a:focus {
-	color: #333333;
-}
-
-th.sortable a {
-	background-position: right;
-	background-repeat: no-repeat;
-	padding-right: 1.1em;
-}
-
-th.asc a {
-	background-image: url(../images/skin/sorted_asc.gif);
-}
-
-th.desc a {
-	background-image: url(../images/skin/sorted_desc.gif);
-}
-
-.odd {
-	background: #f7f7f7;
-}
-
-.even {
-	background: #ffffff;
-}
-
-th:hover, tr:hover {
-	background: #E1F2B6;
 }
 
 /* PAGINATION */
@@ -333,9 +299,4 @@ th:hover, tr:hover {
 
 .buttons .save {
 	background-image: url(../images/skin/database_save.png);
-}
-
-a.skip {
-	position: absolute;
-	left: -9999px;
 }

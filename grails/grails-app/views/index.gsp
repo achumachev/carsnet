@@ -10,31 +10,31 @@
 	</head>
 	<body>
 		<h1>Welcome to CarsNet.com</h1>
-    <p>
+    <div class="content">
       <g:link controller="auth" action="loginForm">Login</g:link> or
       <g:link controller="auth" action="registerForm">Register</g:link>
-    </p>
-    <br />
-    <br />
+      <br />
+      <br />
 
-    <h3 style="text-align: center">Start building your car from most popular brands</h3>
+      <h3 style="text-align: center">Start building your car from most popular brands</h3>
 
-    <div class="carousel">
-      <a class="prev">&laquo; Previous</a>
+      <div class="carousel">
+        <a class="prev">&laquo; Previous</a>
 
-      <div class="wrapper">
-        <div class="items">
-          <g:each in="${featuredBrands}" var="car">
-            <div class="item">
-              <g:link controller="garage" action="carForm" params="[brand: car.name]">
-                <img src="${car.image}" alt="${car.name}" />
-              </g:link>
-            </div>
-          </g:each>
+        <div class="wrapper">
+          <div class="items">
+            <g:each in="${featuredBrands}" var="car">
+              <div class="item">
+                <g:link controller="garage" action="carForm" params="[brand: car.name]">
+                  <img src="${car.image}" alt="${car.name}" />
+                </g:link>
+              </div>
+            </g:each>
+          </div>
         </div>
-      </div>
 
-      <a class="next">Next &raquo;</a>
+        <a class="next">Next &raquo;</a>
+      </div>
     </div>
 
     <script src="/js/jquery.tools.min.js" type="text/javascript" ></script>

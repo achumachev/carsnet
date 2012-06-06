@@ -15,14 +15,25 @@
 		<g:layoutHead/>
     <r:layoutResources />
 	</head>
+
 	<body>
-		<div id="grailsLogo" role="banner">
+    <div class="header-toolbar">
+      <g:link controller="userHome" action="index">Home</g:link> |
+      <g:link controller="garage" action="index">Garage</g:link> |
+      <g:link controller="profile" action="index">Profile</g:link>
+
+      <g:link controller="auth" action="logout" class="logout">Logout</g:link>
+    </div>
+
+    <div class="logo">
       <g:link controller="main" action="index">
-        <img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="CarsNet.com"/>
+        <img src="${resource(dir: 'images', file: 'logo.png')}" alt="CarsNet.com" />
       </g:link>
     </div>
 
-    <g:layoutBody/>
+    <div class="body-content">
+      <g:layoutBody/>
+    </div>
 
     <div class="footer" role="contentinfo">
       Copyright

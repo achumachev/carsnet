@@ -5,13 +5,14 @@
     <title>Users Garage</title>
   </head>
   <body>
-    <div>
-      <g:link controller="userHome" action="index">Back</g:link>
+    <h1>Garage</h1>
+
+    <div class="content">
+      <ul>
+        <li>Current <g:link controller="garage" action="showCar" id="1">Mitsubishi Charisma 1997</g:link></li>
+        <li><g:link controller="garage" action="showCar" id="2">Ford Mustang 2005</g:link></li>
+        <li><g:link controller="garage" action="carForm">Add more</g:link></li>
+      </ul>
     </div>
-    <ul>
-      <li>Current <g:link controller="garage" action="showCar" id="1">Mitsubishi Charisma 1997</g:link></li>
-      <li><g:link controller="garage" action="showCar" id="2">Ford Mustang 2005</g:link></li>
-      <li><g:link controller="garage" action="carForm">Add more</g:link></li>
-    </ul>
   </body>
 </html>

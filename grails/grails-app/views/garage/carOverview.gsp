@@ -5,9 +5,10 @@
     <title>Mitsubishi Charisma 1997</title>
   </head>
   <body>
-    <div>
-      <g:link controller="garage" action="index">Back to garage</g:link>
+    <h1>Mitsubishi Charisma 1997</h1>
+
+    <div class="content">
+      This is a Mitsubishi Charisma 1997
     </div>
-    This is a Mitsubishi Charisma 1997
   </body>
 </html>
